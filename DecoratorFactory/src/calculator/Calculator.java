@@ -2,26 +2,26 @@ package calculator;
 
 public final class Calculator implements Calculable {
 
-    private int primaryArg;
+    private float primaryArg;
 
-    public Calculator(int primaryArg) {
+    public Calculator(float primaryArg) {
         this.primaryArg = primaryArg;
     }
 
     @Override
-    public Calculable sum(int arg) {
+    public Calculable sum(float arg) {
         primaryArg += arg;
         return this;
     }
 
     @Override
-    public Calculable multi(int arg) {
+    public Calculable multi(float arg) {
         primaryArg *= arg;
         return this;
     }
 
     @Override
-    public int getResult() {
+    public float getResult() {
         return primaryArg;
     }
 }

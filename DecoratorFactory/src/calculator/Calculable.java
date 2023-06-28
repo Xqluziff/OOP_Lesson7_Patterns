@@ -1,7 +1,7 @@
 package calculator;
 
 public interface Calculable {
-    Calculable sum(int arg);
-    Calculable multi(int arg);
-    int getResult();
+    Calculable sum(float arg);
+    Calculable multi(float arg);
+    float getResult();
 }

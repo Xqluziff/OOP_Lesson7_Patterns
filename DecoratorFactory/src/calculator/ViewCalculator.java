@@ -12,27 +12,27 @@ public class ViewCalculator {
 
     public void run() {
         while (true) {
-            int primaryArg = promptInt("Введите первый аргумент: ");
+            float primaryArg = promptFloat("Введите первый аргумент: ");
             Calculable calculator = calculableFactory.create(primaryArg);
             while (true) {
                 String cmd = prompt("Введите команду (*, +, =) : ");
                 if (cmd.equals("*")) {
-                    int arg = promptInt("Введите второй аргумент: ");
+                    float arg = promptFloat("Введите второй аргумент: ");
                     calculator.multi(arg);
                     continue;
                 }
                 if (cmd.equals("+")) {
-                    int arg = promptInt("Введите второй аргумент: ");
+                    float arg = promptFloat("Введите второй аргумент: ");
                     calculator.sum(arg);
                     continue;
                 }
                 if (cmd.equals("=")) {
-                    int result = calculator.getResult();
-                    System.out.printf("Результат %d\n", result);
+                    float result = calculator.getResult();
+                    System.out.printf("Результат %.1f\n", result);
                     break;
                 }
             }
-            String cmd = prompt("Еще посчитать (Y/N)?");
+            String cmd = prompt("Еще посчитать (Y/N)?").toUpperCase();
             if (cmd.equals("Y")) {
                 continue;
             }
@@ -46,9 +46,9 @@ public class ViewCalculator {
         return in.nextLine();
     }
 
-    private int promptInt(String message) {
+    private Float promptFloat(String message) {
         Scanner in = new Scanner(System.in);
         System.out.print(message);
-        return Integer.parseInt(in.nextLine());
+        return Float.parseFloat(in.nextLine());
     }
 }
