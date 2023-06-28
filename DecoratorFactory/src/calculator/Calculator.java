@@ -15,6 +15,13 @@ public final class Calculator implements Calculable {
     }
 
     @Override
+    public Calculable diff(float arg) {
+        primaryArg -= arg;
+        return this;
+
+    }
+
+    @Override
     public Calculable multi(float arg) {
         primaryArg *= arg;
         return this;

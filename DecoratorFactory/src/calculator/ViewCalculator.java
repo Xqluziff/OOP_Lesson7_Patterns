@@ -26,9 +26,14 @@ public class ViewCalculator {
                     calculator.sum(arg);
                     continue;
                 }
+                if (cmd.equals("-")) {
+                    float arg = promptFloat("Введите второй аргумент: ");
+                    calculator.diff(arg);
+                    continue;
+                }
                 if (cmd.equals("=")) {
                     float result = calculator.getResult();
-                    System.out.printf("Результат %.1f\n", result);
+                    System.out.printf("Result: %.1f\n", result);
                     break;
                 }
             }
